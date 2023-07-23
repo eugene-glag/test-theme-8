@@ -1,210 +1,97 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "55f98a6f-7bfb-45a1-84de-2b4dd2119b27": {
+      "type": "section-slide-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "53d6300e-8ea2-4f08-820d-605d89182930": {
+          "type": "slide",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "title": "Love the power. \nLove the price.",
+            "subtitle": "iPhone",
+            "button_text": "Shop now",
+            "button_link": "",
+            "image": "shopify:\/\/shop_images\/banner.jpg"
           }
         },
-        "text": {
-          "type": "text",
+        "78c6d1d8-bc2f-45c4-b70e-00d1d434460b": {
+          "type": "slide",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "title": "Title",
+            "subtitle": "Subitle",
+            "button_text": "Shop now",
+            "button_link": "shopify:\/\/collections",
+            "image": "shopify:\/\/shop_images\/banner.jpg"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "53d6300e-8ea2-4f08-820d-605d89182930",
+        "78c6d1d8-bc2f-45c4-b70e-00d1d434460b"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "inverse",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "delay": 5
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "07f22f02-2197-45b9-96c8-380911f7d870": {
+      "type": "collection-showcase",
+      "settings": {
+        "heading": "Apple Collection",
+        "collection": "frontpage"
+      }
+    },
+    "fd84c980-9af9-4413-85ca-a6c08cfe3b1f": {
+      "type": "section-reviews",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "ff6c7e68-882c-48ea-aed0-77031d9ce609": {
+          "type": "review",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "text": "The phone was good. But I don't think it was worth the money. I spend 400$+ on this product and it had 87% battery life which is good and as advertised. However, there was a dent in the body which may occur from a drop and also there was a permanent black tiny dot on the screen. The tempered glass was already applied so it was hard to say that the black dot on the screen was on the tempered or the actual screen. However, after seeing the phone I felt it was not worth 400$+ since you can get a brand new iPhone 12 from Apple for 600$. I think these refurbished iPhones are overrated. Don't get me wrong phone worked well and definitely may have more life in it. For me, the quality I am expecting from spending 400$+ was not there.",
+            "autor": "Denuwan Vithanage"
           }
         },
-        "text": {
-          "type": "text",
+        "5f01a68e-7f03-48bc-b602-03a65403b422": {
+          "type": "review",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "Bought this as a work phone and it’s literally perfect. I saw mixed reviews and was nervous but this phone is brand new. And so affordable and nice. I really do not think I got a renewed version, it doesn’t have a scrape or anything on it it’s brand new. Ordered the phone on a Monday and received it Wednesday, originally wasn’t supposed to come until Friday. Very happy and impressed. It’s from Verizon and comes in a verified Verizon box but do not let that confuse you it’s an unlocked phone for any carrier but it is reassuring to know it’s from a big company. Buy it!",
+            "autor": "Vasya Pupkin"
+          }
+        },
+        "7f1d3201-04a4-4689-97fa-1bfa04fc44bf": {
+          "type": "review",
+          "settings": {
+            "text": "I got this phone yesterday. So, once I got it, I noticed little scratches on the outer rim (the blue part). I’m not super worried about it since I have a case on it, but if that kind of thing bothers you, here’s your warning. There weren’t any scratches on the screen, camera, or the back though. The phone does get hot pretty easily and I got a temperature warning earlier today, which is faster than my old iPhone X, but I also live in Texas so that could be why. I love the .5 lens and the camera in general, so I shared two pics using it to show how it looks; great quality for sure. The only thing I’m not a fan of is the fact that the battery life is 79%. For that reason, I’m docking it one star. I think it would qualify for the option that was below “like new,” but a “like new” phone should have at least 87% battery health. Overall, still a lovely phone; I’m very grateful!",
+            "autor": "Eden Rae"
+          }
+        },
+        "9a1e2403-a42c-4121-a0e5-81e8af5df354": {
+          "type": "review",
+          "settings": {
+            "text": "I ordered an iphone 12 64gb..This was delivered a day early and was well packaged. Upon unboxing and inspection, I found this phone was in EXCELLENT condition. Not 1 scratch on any of the glass or camera lenses. The only possible defect was some very light marks on the sides where a case had rubbed it. Overall the condition was great. Battery health is at 87%. This is an upgrade for my husband from an iphone 6s. Setting up was a breeze. Would definitely purchase from again.",
+            "autor": "Candy Kellem"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "ff6c7e68-882c-48ea-aed0-77031d9ce609",
+        "5f01a68e-7f03-48bc-b602-03a65403b422",
+        "7f1d3201-04a4-4689-97fa-1bfa04fc44bf",
+        "9a1e2403-a42c-4121-a0e5-81e8af5df354"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "heading": "Reviews"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "30ac94d7-f119-444f-a22a-4bdd0983e9e5": {
+      "type": "section-subscribe",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "background-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Subscribe"
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "55f98a6f-7bfb-45a1-84de-2b4dd2119b27",
+    "07f22f02-2197-45b9-96c8-380911f7d870",
+    "fd84c980-9af9-4413-85ca-a6c08cfe3b1f",
+    "30ac94d7-f119-444f-a22a-4bdd0983e9e5"
   ]
 }
