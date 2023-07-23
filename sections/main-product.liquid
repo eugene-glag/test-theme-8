@@ -1,0 +1,98 @@
+{{ 'swiper.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'swiper-slider.min.js' | asset_url }}"></script>
+<script src="{{ 'main-product.js' | asset_url }}"></script>
+
+<section
+  id="MainProduct-{{ section.id }}"
+  class="main-product page-width"
+>
+  <div class="product-media">
+    <div class="swiper-button-prev"></div>
+
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        {% if product.media != blank %}
+          {% render 'product-images', media: product.media %}
+        {% endif %}
+      </div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+
+  </div>
+
+  <div class="product-info">
+    {%- for block in section.blocks -%}
+    {%- case block.type -%}
+    {%- when 'title' -%}
+      <div class="title" {{ block.shopify_attributes }}>
+        <h1 class="title">{{ product.title }}</h1>
+      </div>
+      {%- when 'description' -%}
+      <div class="description" {{ block.shopify_attributes }}>
+        <span>{{ product.description }}</span>
+      </div>
+
+      <div class="buy-block">
+        <div class="variants">
+          {% render 'product-variants', product: product %}
+        </div>
+        <div class="quantity">
+          <button class="button button-primary quantity_button minus" type="button">
+            {% render 'icon-minus' %}
+          </button>
+          <input
+                  class="quantity_input"
+                  id="product-quantity"
+                  type="number"
+                  name="quantity"
+                  min="1"
+                  step="1"
+                  value="1"
+          />
+          <button class="button button-primary quantity_button plus" type="button">
+            {% render 'icon-plus' %}
+          </button>
+        </div>
+
+        <div class="buy-button">
+          <button id="product-submit" class="button button-primary" data-id="{{ product.selected_or_first_available_variant.id }}">Add to cart</button>
+        </div>
+      </div>
+    {%- endcase -%}
+    {%- endfor -%}
+
+  </div>
+
+</section>
+
+<script>
+  const imageSlider = new Swiper('.swiper-container', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    slidesPerView: 1,
+  });
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.main-product.name",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,19 @@
+{% comment %}
+    Renders product card
+
+    Accepts:
+    - product: {Object} Product object
+
+    Usage:
+    {% render 'product-card',product: product %}
+{% endcomment %}
+
+<div class="product-card">
+    <a class="link" href="{{ product.url }}">
+    <div class="image">
+        <img src="{{ product.media[0].src | img_url: 'medium' }}">
+    </div>
+    <div class="title">{{ product.title }}</div>
+    <div class="price"><h2>{{ product.price | money }}</h2></div>
+    </a>
+</div>

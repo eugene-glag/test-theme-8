@@ -1,0 +1,77 @@
+{{ 'section-cart.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'cart.js' | asset_url }}"></script>
+
+<div class="cart-page page-width">
+    {% if cart.item_count > 0 %}
+    <div class="cart-page_header">
+        <h1>Your Cart</h1>
+    </div>
+    <div class="cart-container">
+            <table class="cart-items">
+                <thead>
+                <tr>
+                    <td>Product</td>
+                    <td>Quantity</td>
+                    <td>Total</td>
+                    <td></td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in cart.items %}
+                    <tr>
+                        <td>
+                            <a href="{{ item.url }}">
+                                <img class="item-image" src="{{ item.image | img_url: '75x75' }}">
+                                <span>{{ item.title }}</span>
+                            </a>
+                        </td>
+                        <td>
+                            <div class="item-quantity quantity">
+                                <button class="button button-primary quantity_button minus" type="button" data-id="{{ item.id }}">
+                                    {% render 'icon-minus' %}
+                                </button>
+                                <input
+                                        class="quantity_input"
+                                        type="number"
+                                        name="quantity"
+                                        step="1"
+                                        value="{{ item.quantity }}"
+                                        data-id="{{ item.id }}"
+                                />
+                                <button class="button button-primary quantity_button plus" type="button" data-id="{{ item.id }}">
+                                    {% render 'icon-plus' %}
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <span>{{ item.line_price | money }}</span>
+                        </td>
+                        <td>
+                            <span class="cart-remove" data-id="{{ item.id }}">X</span>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="cart-empty">
+                <h2>You cart empty</h2>
+            </div>
+    </div>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Cart section",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Cart section"
+    }
+  ]
+}
+{% endschema %}

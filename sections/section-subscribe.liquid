@@ -1,0 +1,87 @@
+{{ 'section-subscribe.css' | asset_url | stylesheet_tag }}
+
+<div class="section-subscribe page-width" id="subscribe">
+
+    {% if section.settings.heading != blank %}
+        <div class="heading">
+            <h2>{{ section.settings.heading }}</h2>
+        </div>
+    {% endif %}
+
+    <div class="form">
+        {%- form 'customer', id: 'Contact', class: 'footer__newsletter newsletter-form' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <input
+                    id="NewsletterForm--{{ section.id }}"
+                    type="email"
+                    name="contact[email]"
+                    class="field__input"
+                    value="{{ form.email }}"
+                    aria-required="true"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    autocomplete="email"
+                    {% if form.errors %}
+                        autofocus
+                        aria-invalid="true"
+                        aria-describedby="ContactFooter-error"
+                    {% elsif form.posted_successfully? %}
+                        aria-describedby="ContactFooter-success"
+                    {% endif %}
+                    placeholder="{{ 'newsletter.label' | t }}"
+                    required
+            >
+
+            <button
+                    class="buton button-primary"
+                    type="submit"
+                    class="newsletter-form__button field__button"
+                    name="commit"
+                    id="Subscribe"
+                    aria-label="{{ 'newsletter.button_label' | t }}"
+            >
+                Submit
+            </button>
+            {%- if form.errors -%}
+                <small class="newsletter-form__message form__message" id="Contact-error">
+                    {%- render 'icon-error' -%}
+                    {{- form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email -}}
+                </small>
+            {%- endif -%}
+
+            {%- if form.posted_successfully? -%}
+                <h3
+                        class="newsletter-form__message newsletter-form__message--success form__message"
+                        id="ContactFooter-success"
+                        tabindex="-1"
+                        autofocus
+                >
+                    {% render 'icon-success' -%}
+                    {{- 'newsletter.success' | t }}
+                </h3>
+            {%- endif -%}
+        {%- endform -%}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Subscribe",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Subscribe",
+      "label": "Subscribe"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscribe"
+    }
+  ]
+}
+{% endschema %}

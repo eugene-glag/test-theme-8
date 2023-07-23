@@ -1,0 +1,110 @@
+{{ 'section-slide-banner.css' | asset_url | stylesheet_tag }}
+{{ 'swiper.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'swiper-slider.min.js' | asset_url }}"></script>
+
+<div class="section-slide-banner" id="banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+                <div class="swiper-slide">
+                  <div class="media-content">
+                    {{
+                    block.settings.image
+                    | image_url: width: 3840
+                    | image_tag:
+                    loading: 'lazy',
+                    width: block.settings.image.width,
+                    sizes: '100vw',
+                    widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+                    }}
+                  </div>
+                  <div class="text-content page-width">
+                    <h2 class="title">{{ block.settings.title }}</h2>
+                    <p class="subtitle">{{ block.settings.subtitle }}</p>
+                    {% if block.settings.button_text != blank %}
+                      <a class="button button-secondary" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
+                    {% endif %}
+                  </div>
+                </div>
+            {%- endfor -%}
+        </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  <script>
+    const imageSlider = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      {% if section.settings.delay > 0 %}
+        autoplay: {
+          delay: {{ section.settings.delay }}000,
+        },
+      {% endif %}
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+    });
+  </script>
+</div>
+
+{% schema %}
+{
+  "name": "Slide Banner",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "delay",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Autoplay delay",
+      "info": "0 = disable",
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "title",
+          "default": "Title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "subtitle",
+          "default": "Subitle",
+          "label": "Subitle"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "default": "Shop now",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slide Banner"
+    }
+  ]
+}
+{% endschema %}

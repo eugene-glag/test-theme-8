@@ -1,0 +1,29 @@
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="footer">
+  <div class="contact-info">
+    <p class="store-name">
+      <a href="{{ shop.url }}" class="link">{{ shop.name }}</a>
+    </p>
+    <p class="email">
+     <span>Email:</span> <a class="link" href="mailto:{{ shop.email }}">{{ shop.email }}</a>
+    </p>
+    <p class="adress">
+      {{ shop.address | format_address }}
+    </p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "blocks": [
+
+  ],
+  "settings": [
+
+  ],
+  "default": {
+  }
+}
+{% endschema %}

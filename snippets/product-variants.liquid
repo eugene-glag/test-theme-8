@@ -1,0 +1,15 @@
+{% comment %}
+    Renders product variants
+
+    Accepts:
+    - product: {Object} Product object
+
+    Usage:
+    {% render 'product-variants',product: product %}
+{% endcomment %}
+
+<div class="variants-items">
+    {% for variant in product.variants %}
+        <button class="button button-secondary variant-item  {% if variant.available == false %}unavailable{% endif %}{% if forloop.first %}active{% endif %}" data-id="{{ variant.id }}" data-avaible="{{ variant.available }}">{{ variant.title }}</button>
+    {% endfor %}
+</div>

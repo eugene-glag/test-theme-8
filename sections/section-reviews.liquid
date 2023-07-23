@@ -1,0 +1,58 @@
+{{ 'section-reviews.css' | asset_url | stylesheet_tag }}
+
+<div class="section-reviews page-width" id="reviews">
+    {% if section.settings.heading != blank %}
+        <div class="heading">
+            <h2>{{ section.settings.heading }}</h2>
+        </div>
+    {% endif %}
+    <div class="reviews-container">
+        {% for block in section.blocks %}
+            <div class="review">
+              <p class="text">{{ block.settings.text }}</p>
+              <h2 class="autor">{{ block.settings.autor }}</h2>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Reviews",
+      "label": "heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "review",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "Text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "autor",
+          "default": "Vasya Pupkin",
+          "label": "Autor"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews"
+    }
+  ]
+}
+{% endschema %}

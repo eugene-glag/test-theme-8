@@ -1,0 +1,102 @@
+{{ 'section-header.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+
+{%- endstyle -%}
+
+<header class="header">
+    <div class="mobile-menu">
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-mobile">
+            <nav>
+                <ul>
+                    {% for link in section.settings.menu.links -%}
+                        <li>
+                            <a href="{{ link.url }}" class="link"><h2>{{ link.title }}</h2></a>
+                        </li>
+                    {%- endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="logo">
+        <a class="link" href="{{ routes.root_url }}">
+            {%- if settings.logo != blank -%}
+                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+                {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                {{ settings.logo | image_url: width: 600 | image_tag:
+                class: 'logo-image',
+                widths: widths,
+                height: logo_height,
+                width: settings.logo_width,
+                alt: logo_alt,
+                sizes: sizes,
+                preload: true
+                }}
+            {%- else -%}
+                <span class="h2">{{ shop.name }}</span>
+            {%- endif -%}
+        </a>
+    </div>
+    <div class="menu">
+        <nav>
+            <ul>
+                {% for link in section.settings.menu.links -%}
+                    <li>
+                        <a href="{{ link.url }}" class="link">{{ link.title }}</a>
+                    </li>
+                {%- endfor %}
+            </ul>
+        </nav>
+    </div>
+    <div class="actions">
+        {%- if shop.customer_accounts_enabled -%}
+            <a class="link"
+               href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">
+                {% render 'icon-account' %}
+                <span class="visually-hidden">
+            {%- liquid
+                if customer
+                    echo 'customer.account_fallback' | t
+                else
+                    echo 'customer.log_in' | t
+                endif
+            -%}
+          </span>
+            </a>
+        {%- endif -%}
+
+        <div class="header-cart">
+            <a href="{{ routes.cart_url }}" class="link">
+                {% render 'icon-cart-cus' %}
+                <div class="cart-count">
+                        <span>
+                            {% if cart.item_count > 0 %}
+                                {{ cart.item_count }}
+                            {%- endif -%}
+                        </span>
+                </div>
+            </a>
+        </div>
+    </div>
+</header>
+
+{% schema %}
+{
+  "name": "t:sections.header.name",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ]
+}
+{% endschema %}

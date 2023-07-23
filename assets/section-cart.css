@@ -1,0 +1,76 @@
+.cart-page .cart-empty {
+  text-align: center;
+}
+.cart-page .cart-page_header {
+  text-align: center;
+}
+.cart-page .cart-container .cart-items {
+  width: 100%;
+}
+.cart-page .cart-container .cart-items td {
+  padding: 5px 10px;
+}
+.cart-page .cart-container .cart-items td a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 5px;
+}
+@media (max-width: 768px) {
+  .cart-page .cart-container .cart-items td a {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: initial;
+    -ms-flex-align: initial;
+    align-items: initial;
+    max-width: 75px;
+    text-align: center;
+  }
+}
+.cart-page .cart-container .cart-items .item-image {
+  max-width: 75px;
+}
+.cart-page .cart-container .cart-items .cart-remove {
+  cursor: pointer;
+}
+.cart-page .cart-container .cart-items .cart-remove:hover {
+  opacity: 0.7;
+}
+.cart-page .cart-container .cart-items .item-quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  outline: none;
+}
+.cart-page .cart-container .cart-items .item-quantity .quantity_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.cart-page .cart-container .cart-items .item-quantity .quantity_button.minus {
+  border-radius: 10px 0 0 10px;
+}
+.cart-page .cart-container .cart-items .item-quantity .quantity_button.plus {
+  border-radius: 0 10px 10px 0;
+}
+.cart-page .cart-container .cart-items .item-quantity .quantity_input {
+  padding: 9px 5px;
+  width: 45px;
+  outline: none;
+  text-align: center;
+}
+.cart-page .cart-container .cart-items .item-quantity .quantity_input::-webkit-outer-spin-button, .cart-page .cart-container .cart-items .item-quantity .quantity_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.cart-page .cart-container .cart-items .item-quantity svg {
+  width: 10px;
+}
